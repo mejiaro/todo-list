@@ -1,0 +1,8 @@
+
+<%= form_for(@todo) do |f|%>
+	<%= f.hidden_field :state, :value => 'Pending' %>	
+	Remind me to...
+	<%= f.text_field :description %>
+
+	<%= f.submit %>
+<% end %>

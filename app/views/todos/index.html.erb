@@ -1,0 +1,13 @@
+<h2>To Do's</h2>
+
+<% if @todos.empty? %>
+	<p>All Done!</p>
+<%else %>
+	<ul>
+	<% @todos.each do |item| %>
+		<li><%= item.description %> <%= button_to "Done!", todo_path(item.id),params: {'todo[state]' => 'Done'}, :method => :patch %> </li>
+	<% end %>
+	</ul>	
+<% end %>
+
+<%= link_to "Add item", new_todo_path %>
